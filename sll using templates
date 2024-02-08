@@ -1,0 +1,95 @@
+/*#include<iostream>
+using namespace std;
+template<class GT>
+class node{
+	public:GT data;
+	       node*link;
+};
+template<class GT>
+class sll
+{
+	node<GT>*f;
+	public:
+	   sll():f(NULL)
+	   {
+	       cout<<"ZPC\n";
+	     void Ins_frnt()
+	     {
+	        node<GT>*t=new node<GT>;
+	        cin>>t->data;
+	        t->link=NULL;
+	        if(f!=NULL)
+	        	t->link=NULL;
+	        f=t;
+	     }
+	     void display()
+	     {
+		if(f==NULL)
+		{
+			cout<<"SLL is empty";
+			return;
+		}
+	        cout<<"Sll contents are\n";
+	        for(node<GT>*t=f;t!=NULL;t=t->link)
+	               cout<<t->data<<endl;
+	      }
+	      int main()
+	      {*/
+#include<iostream>
+using namespace std;
+
+template<class GT>
+class node{
+    public:
+        GT data;
+        node<GT>*link;
+};
+
+template<class GT>
+class sll{
+    node<GT>*f;
+
+    public:
+        sll():f(NULL)
+        {
+            cout<<"ZPC\n";
+        }
+
+        void Ins_frnt()
+        {
+            node<GT>*t=new node<GT>;
+            cin>>t->data;
+            t->link=NULL;
+            if(f!=NULL)
+                t->link=f;
+            f=t;
+        }
+
+        void display()
+        {
+            if(f==NULL)
+            {
+                cout<<"SLL is empty";
+                return;
+            }
+            cout<<"Sll contents are\n";
+            for(node<GT>*t=f;t!=NULL;t=t->link)
+                cout<<t->data<<endl;
+        }
+
+        int main()
+        {
+            sll<int> lst;
+            lst.Ins_frnt();
+            lst.Ins_frnt();
+            lst.Ins_frnt();
+            lst.display();
+            sll<float> flst;
+            flst.Ins_frnt();
+            flst.Ins_frnt();
+            flst.Ins_frnt();
+            flst.display();
+            return 0;
+        }
+};	        
+	
