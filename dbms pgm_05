@@ -1,0 +1,56 @@
+ CREATE TABLE Employee (
+        E_id INT PRIMARY KEY,
+        E_name VARCHAR(255),
+        Age INT,
+        Salary DECIMAL(10, 2)
+    );
+
+INSERT INTO Employee (E_id, E_name, Age, Salary) VALUES (1, 'Arjun Mehta', 30, 55000.00);
+INSERT INTO Employee (E_id, E_name, Age, Salary) VALUES (2, 'Priya Sharma', 45, 70000.00);
+INSERT INTO Employee (E_id, E_name, Age, Salary) VALUES (3, 'Ravi Kumar', 28, 48000.00);
+INSERT INTO Employee (E_id, E_name, Age, Salary) VALUES (4, 'Neha Verma', 35, 62000.00);
+INSERT INTO Employee (E_id, E_name, Age, Salary) VALUES (5, 'Vikram Singh', 40, 66000.00);
+
+SET SERVEROUTPUT ON;
+-- Declare variables
+DECLARE
+    E_id INT;
+    E_name VARCHAR(255);
+    Age INT;
+    Salary DECIMAL(10, 2);l
+
+-- Declare cursor
+CURSOR employee_cursor IS
+    SELECT E_id, E_name, Age, Salary
+    FROM Employee;
+
+-- Open the cursor
+BEGIN
+    OPEN employee_cursor;
+
+    -- Fetch data from cursor
+    LOOP
+        FETCH employee_cursor INTO E_id, E_name, Age, Salary;
+        EXIT WHEN employee_cursor%NOTFOUND;
+        
+        -- Output or use the fetched values
+        DBMS_OUTPUT.PUT_LINE('Employee ID: ' || E_id || ', Name: ' || E_name || ', Age: ' || Age || ', Salary: ' || Salary);
+    END LOOP;
+
+    -- Close the cursor
+    CLOSE employee_cursor;
+END;
+/
+
+
+
+
+output will be
+
+Employee ID: 1, Name: Arjun Mehta, Age: 30, Salary: 55000
+Employee ID: 2, Name: Priya Sharma, Age: 45, Salary: 70000
+Employee ID: 3, Name: Ravi Kumar, Age: 28, Salary: 48000
+Employee ID: 4, Name: Neha Verma, Age: 35, Salary: 62000
+Employee ID: 5, Name: Vikram Singh, Age: 40, Salary: 66000
+
+PL/SQL procedure successfully completed.
