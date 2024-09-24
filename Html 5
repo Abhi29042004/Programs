@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My First Web Page</title>
+    <style>
+        /* Style for the moving text */
+        .moving-text {
+            animation: move 10s linear infinite;
+        }
+
+        @keyframes move {
+            from {
+                transform: translateX(100%);
+            }
+            to {
+                transform: translateX(-100%);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Moving Text -->
+    <div class="moving-text">
+        Basic HTML Tags
+    </div>
+
+    <!-- Different Heading Tags -->
+    <h1>This is a Heading 1</h1>
+    <h2>This is a Heading 2</h2>
+    <h3>This is a Heading 3</h3>
+    <h4>This is a Heading 4</h4>
+    <h5>This is a Heading 5</h5>
+    <h6>This is a Heading 6</h6>
+
+    <!-- Paragraph -->
+    <p>This is a paragraph. It contains text that is separated from other text by line breaks.</p>
+
+    <!-- Horizontal Line -->
+    <hr>
+
+    <!-- Line Break -->
+    <p>This is some text.<br>This is text after a line break.</p>
+
+    <!-- Block Quote -->
+    <blockquote>
+        <p>This is a block quote. It is used to display a quotation or excerpt from another source.</p>
+    </blockquote>
+
+    <!-- Preformatted Text -->
+    <pre>
+This is preformatted text.
+    It retains spaces and line breaks.
+    </pre>
+
+    <!-- Different Logical Styles -->
+    <p>Here are some different logical styles:</p>
+    <ul>
+        <li><b>This is bold text</b></li>
+        <li><i>This is italic text</i></li>
+        <li><u>This is underlined text</u></li>
+        <li><sub>This is subscript text</sub></li>
+        <li><sup>This is superscript text</sup></li>
+    </ul>
+</body>
+</html>
